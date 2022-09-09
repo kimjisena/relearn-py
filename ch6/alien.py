@@ -1,24 +1,23 @@
 #! /bin/python3
 
-alien_0 = {'x_position': 0, 'y_position': 25, 'speed': 'medium', 'points': 5}
-print(alien_0)
-print(f"Original position: {alien_0['x_position']}\n")
+# Make an empty list for storing aliens.
+aliens = []
 
-# Move the alien to the right.
-# Determine how far to move the alien based on its current speed
-if alien_0['speed'] == 'slow':
-    x_increment = 1
-elif alien_0['speed'] == 'medium':
-    x_increment = 2
-else:
-    # This must be a fast alien
-    x_increment = 3
+# Make 30 green aliens.
+for alien_number in range(30):
+    aliens.append({'color': 'green', 'points': 5, 'speed': 'slow'})
 
-# The new position is the old position plus the increment
-alien_0['x_position'] = alien_0['x_position'] + x_increment
+for alien in aliens[:3]:
+    if alien['color'] == 'green':
+        alien['color'] = 'yellow'
+        alien['speed'] = 'medium'
+        alien['points'] = 10
 
-del alien_0['points']
-print(alien_0)
-print(f"New position: {alien_0['x_position']}") 
+# Show the first 5 aliens.
+for alien in aliens[:5]:
+    print(alien)
+print("...")
 
+# Show how manay aliens have been created.
+print(f"Total number of aliens: {len(aliens)}")
 
