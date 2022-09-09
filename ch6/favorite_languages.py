@@ -6,8 +6,7 @@ favorite_languages = {
         'edward': 'ruby',
         'phil': 'python',
         }
-
-language = favorite_languages['sarah'].title()
-print(f"Sarah's favorite language is {language}.")
-print(f"Kim's favorite language is {favorite_languages.get('kim', 'Any')}.")
-
+print("The following languages have been mantioned:")
+for language in set(favorite_languages.values()):
+    print(language.title())
+    
