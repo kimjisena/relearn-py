@@ -1,12 +1,17 @@
 #! /bin/python3
 
 favorite_languages = {
-        'jen': 'python',
-        'sarah': 'c',
-        'edward': 'ruby',
-        'phil': 'python',
+        'jen': ['python', 'ruby'],
+        'sarah': ['c'],
+        'edward': ['ruby', 'go'],
+        'phil': ['python', 'haskell'],
         }
-print("The following languages have been mantioned:")
-for language in set(favorite_languages.values()):
-    print(language.title())
+
+for name, languages in favorite_languages.items():
+    if len(languages) == 1:
+        print(f"\n{name.title()}'s favorite language is {languages[0].title()}.")
+    else:
+        print(f"\n{name.title()}'s favorite languages are:")
+        for language in languages:
+            print(f"\t{language.title()}")
     
